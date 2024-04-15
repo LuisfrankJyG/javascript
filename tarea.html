@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea</title>
+</head>
+<body>
+    Desenfoca aquí: <input type="text" id="fname"> <br> <br>
+    transforma en mayusculas: <input type="text" id="fname1" onchange="myFunction1()"> <br> <br>
+    <button id="click" onclick="myFunction2()">Clickeame.</button> <br> <br>
+    <button id="dclick" ondblclick="myFunction3()">hazme doble click.</button> <br> <br>
+    Ingresa una frase: <input type="text" id="fname2" onfocus="myFunction4()"> 
+    <p>Presione una tecla en el campo de entrada:</p>
+    <input type="text" onkeydown="myFunction5(this)"> <br> <br>
+    <input type="text" id="press" onkeypress="myFunction6()"> <br> <br>
+    Manten una letra y al soltarla se volveran mayusculas: <input type="text" id="key" onkeyup="myFunction7()"> <br> <br>
+    <iframe onload="myFunction8()" src="tarea.html"></iframe>
+    <p id="load"></p>
+</body>
+<script type="text/javascript">
+document.getElementById("fname").onblur = function() {myFunction()};
+
+function myFunction() {
+    alert("El campo de entrada se ha desenfocado.");
+}
+function myFunction1() {
+  var x = document.getElementById("fname1");
+  x.value = x.value.toUpperCase();
+}
+function myFunction2() {
+  document.getElementById("click").innerHTML = "Me has clickeado!";
+}
+ function myFunction3() {
+    document.getElementById("dclick").innerHTML = "Me has doble clickeado!";
+}
+function myFunction4() {
+  document.getElementById("fname2").style.backgroundColor = "lightblue";
+}
+function myFunction5(element) {
+  element.style.backgroundColor = "green";
+}
+function myFunction6() {
+  document.getElementById("press").style.backgroundColor = "gold";
+}
+function myFunction7() {
+  let x = document.getElementById("key");
+  x.value = x.value.toUpperCase();
+}
+function myFunction8() {
+  document.getElementById("load").innerHTML = "Se ha generado el espejo correctamente.";
+}
+</script>
+</html>
